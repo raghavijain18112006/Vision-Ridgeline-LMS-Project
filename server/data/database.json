@@ -1,0 +1,599 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Rhea Kapoor",
+      "email": "demo@ridgeline.app",
+      "password": "password_new_123",
+      "role": "student",
+      "status": "active",
+      "phone": "+91 98765 43210",
+      "bio": "Updated learning objective for full-stack interview prep.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "studentId": "RL-2026-001",
+      "createdAt": "2026-01-15T09:30:00.000Z",
+      "lastLogin": "2026-10-25T10:12:37.519Z",
+      "preferences": {
+        "smsAlerts": true,
+        "emailDigest": false
+      },
+      "updatedAt": "2026-10-25T10:12:37.924Z"
+    },
+    {
+      "id": "u2",
+      "name": "Dev Malhotra",
+      "email": "dev@ridgeline.app",
+      "password": "password123",
+      "role": "student",
+      "status": "active",
+      "phone": "+91 98111 22334",
+      "bio": "Computer Science undergrad preparing for placement interviews.",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "studentId": "RL-2026-002",
+      "createdAt": "2026-02-10T11:00:00.000Z",
+      "lastLogin": "2026-10-24T18:15:00.000Z",
+      "preferences": {
+        "smsAlerts": false,
+        "emailDigest": true
+      }
+    },
+    {
+      "id": "u3",
+      "name": "Ananya Rao",
+      "email": "ananya@ridgeline.app",
+      "password": "password123",
+      "role": "instructor",
+      "status": "active",
+      "phone": "+91 97234 56789",
+      "bio": "Staff Frontend Engineer with 8+ years building enterprise React architectures.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+      "studentId": "RL-INS-001",
+      "createdAt": "2025-11-01T10:00:00.000Z",
+      "lastLogin": "2026-10-25T14:00:00.000Z",
+      "preferences": {
+        "smsAlerts": true,
+        "emailDigest": true
+      }
+    },
+    {
+      "id": "u4",
+      "name": "Vikram Shah",
+      "email": "vikram@ridgeline.app",
+      "password": "password123",
+      "role": "instructor",
+      "status": "active",
+      "phone": "+91 96543 21098",
+      "bio": "Backend Architect specializing in high-throughput distributed Node.js APIs.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "studentId": "RL-INS-002",
+      "createdAt": "2025-11-15T12:00:00.000Z",
+      "lastLogin": "2026-10-25T12:30:00.000Z",
+      "preferences": {
+        "smsAlerts": true,
+        "emailDigest": true
+      }
+    },
+    {
+      "id": "u5",
+      "name": "Admin User",
+      "email": "admin@ridgeline.app",
+      "password": "password123",
+      "role": "admin",
+      "status": "active",
+      "phone": "+91 99999 88888",
+      "bio": "Ridgeline LMS Academic Administrator.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "studentId": "RL-ADM-001",
+      "createdAt": "2025-10-01T08:00:00.000Z",
+      "lastLogin": "2026-10-25T15:00:00.000Z",
+      "preferences": {
+        "smsAlerts": true,
+        "emailDigest": true
+      }
+    }
+  ],
+  "courses": [
+    {
+      "id": "c1",
+      "title": "React for Interview-Ready Frontends",
+      "category": "Web Development",
+      "price": 0,
+      "rating": 4.7,
+      "instructor": "Ananya Rao",
+      "status": "approved",
+      "students": 312,
+      "description": "Component architecture, hooks, and state patterns asked about in every frontend interview loop.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Foundations",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "Why component trees matter",
+              "duration": 480,
+              "type": "video"
+            },
+            {
+              "id": "l2",
+              "title": "State vs. props",
+              "duration": 600,
+              "type": "video"
+            },
+            {
+              "id": "l3",
+              "title": "Quiz: Core concepts",
+              "duration": 300,
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "What triggers a re-render in React?",
+                  "options": [
+                    "Changing a state or prop value",
+                    "Refreshing the CSS file",
+                    "Restarting the browser"
+                  ],
+                  "answer": 0
+                },
+                {
+                  "q": "Props are best described as:",
+                  "options": [
+                    "Mutable internal data",
+                    "Read-only inputs passed to a component",
+                    "A styling API"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "title": "Data & Side Effects",
+          "lessons": [
+            {
+              "id": "l4",
+              "title": "useEffect and cleanup",
+              "duration": 540,
+              "type": "video"
+            },
+            {
+              "id": "l5",
+              "title": "Fetching and caching data",
+              "duration": 660,
+              "type": "video"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Node & Express: Production APIs",
+      "category": "Backend",
+      "price": 1499,
+      "rating": 4.5,
+      "instructor": "Vikram Shah",
+      "status": "approved",
+      "students": 159,
+      "description": "Build role-protected REST APIs with JWT middleware, the backend half of this LMS.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Auth & Roles",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "JWT middleware end to end",
+              "duration": 720,
+              "type": "video"
+            },
+            {
+              "id": "l2",
+              "title": "Quiz: Auth basics",
+              "duration": 240,
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Where should role checks be enforced?",
+                  "options": [
+                    "Only in the UI",
+                    "On the server, for every protected route",
+                    "Nowhere, roles are just cosmetic"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "title": "MongoDB Schema Design for SaaS",
+      "category": "Backend",
+      "price": 999,
+      "rating": 4.3,
+      "instructor": "Priya Menon",
+      "status": "pending",
+      "students": 0,
+      "description": "Modelling relationships, indexes, and aggregation pipelines for real products.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Getting started",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "Documents vs. collections",
+              "duration": 420,
+              "type": "video"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "title": "UI/UX Design Masterclass",
+      "category": "Design",
+      "price": 799,
+      "rating": 4.8,
+      "instructor": "Meera Joshi",
+      "status": "approved",
+      "students": 246,
+      "description": "Create beautiful interfaces using design systems, wireframes and usability principles.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Design foundations",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "Design thinking essentials",
+              "duration": 420,
+              "type": "video"
+            },
+            {
+              "id": "l2",
+              "title": "Wireframes and user flows",
+              "duration": 540,
+              "type": "video"
+            },
+            {
+              "id": "l3",
+              "title": "Quiz: UX basics",
+              "duration": 240,
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "What is a wireframe?",
+                  "options": [
+                    "A layout blueprint",
+                    "A database",
+                    "A deployment tool"
+                  ],
+                  "answer": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "title": "Python for Data Analytics",
+      "category": "Data & AI",
+      "price": 1199,
+      "rating": 4.6,
+      "instructor": "Arjun Verma",
+      "status": "approved",
+      "students": 389,
+      "description": "Learn Python, data cleaning and visualisation through practical mini projects.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Python essentials",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "Variables and collections",
+              "duration": 480,
+              "type": "video"
+            },
+            {
+              "id": "l2",
+              "title": "Working with datasets",
+              "duration": 600,
+              "type": "video"
+            },
+            {
+              "id": "l3",
+              "title": "Knowledge check",
+              "duration": 240,
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which library is popular for tabular data?",
+                  "options": [
+                    "Pandas",
+                    "React",
+                    "Express"
+                  ],
+                  "answer": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "title": "Java DSA Interview Bootcamp",
+      "category": "Programming",
+      "price": 1499,
+      "rating": 4.9,
+      "instructor": "Karan Mehta",
+      "status": "approved",
+      "students": 521,
+      "description": "Master arrays, strings, recursion and problem-solving patterns for coding interviews.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Problem solving",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "Time complexity explained",
+              "duration": 480,
+              "type": "video"
+            },
+            {
+              "id": "l2",
+              "title": "Arrays and two pointers",
+              "duration": 660,
+              "type": "video"
+            },
+            {
+              "id": "l3",
+              "title": "DSA checkpoint",
+              "duration": 300,
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "What is the typical complexity of binary search?",
+                  "options": [
+                    "O(log n)",
+                    "O(n²)",
+                    "O(2ⁿ)"
+                  ],
+                  "answer": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c7",
+      "title": "Cloud & DevOps Foundations",
+      "category": "Cloud",
+      "price": 999,
+      "rating": 4.5,
+      "instructor": "Neel Sethi",
+      "status": "approved",
+      "students": 174,
+      "description": "Understand cloud models, CI/CD pipelines, containers and deployment workflows.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Cloud fundamentals",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "Cloud service models",
+              "duration": 420,
+              "type": "video"
+            },
+            {
+              "id": "l2",
+              "title": "CI/CD pipeline basics",
+              "duration": 540,
+              "type": "video"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c8",
+      "title": "Communication & Placement Skills",
+      "category": "Career Skills",
+      "price": 499,
+      "rating": 4.4,
+      "instructor": "Simran Kaur",
+      "status": "approved",
+      "students": 298,
+      "description": "Improve your resume, presentations, group discussions and technical interview confidence.",
+      "sections": [
+        {
+          "id": "s1",
+          "title": "Career readiness",
+          "lessons": [
+            {
+              "id": "l1",
+              "title": "Build a strong resume",
+              "duration": 360,
+              "type": "video"
+            },
+            {
+              "id": "l2",
+              "title": "Technical interview strategy",
+              "duration": 480,
+              "type": "video"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1792923157862",
+      "rating": 0,
+      "students": 0,
+      "status": "approved",
+      "sections": [
+        {
+          "id": "s-1792923157862",
+          "title": "Introduction",
+          "lessons": [
+            {
+              "id": "l-1792923157862",
+              "title": "Welcome to the Course",
+              "duration": 300,
+              "type": "video"
+            }
+          ]
+        }
+      ],
+      "title": "Mastering TypeScript Enterprise Architectures",
+      "category": "Web Development",
+      "price": 1999,
+      "description": "Design production TypeScript applications.",
+      "instructor": "Rhea Kapoor (Updated)"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "enr-1",
+      "userId": "u1",
+      "courseId": "c1",
+      "enrolledAt": "2026-02-01T10:00:00.000Z",
+      "status": "active"
+    },
+    {
+      "id": "enr-1792923157767-zubf",
+      "userId": "u1",
+      "courseId": "c2",
+      "enrolledAt": "2026-10-25T10:12:37.767Z",
+      "status": "active"
+    }
+  ],
+  "carts": {
+    "u1": []
+  },
+  "orders": [
+    {
+      "id": "ORD-2026-001",
+      "userId": "u1",
+      "items": [
+        {
+          "courseId": "c1",
+          "title": "React for Interview-Ready Frontends",
+          "price": 0
+        }
+      ],
+      "subtotal": 0,
+      "discount": 0,
+      "tax": 0,
+      "total": 0,
+      "currency": "INR",
+      "status": "paid",
+      "paymentMethod": "free_enrollment",
+      "transactionId": "TXN_FREE_001",
+      "createdAt": "2026-02-01T10:00:00.000Z"
+    },
+    {
+      "id": "ORD-2026-0002",
+      "createdAt": "2026-10-25T10:12:37.726Z",
+      "status": "paid",
+      "userId": "u1",
+      "items": [
+        {
+          "courseId": "c2",
+          "title": "Node & Express: Production APIs",
+          "price": 1499,
+          "instructor": "Vikram Shah",
+          "category": "Backend"
+        }
+      ],
+      "subtotal": 1499,
+      "discount": 150,
+      "couponCode": "RIDGELINE10",
+      "total": 1349,
+      "currency": "INR",
+      "billingDetails": {
+        "name": "Rhea Kapoor",
+        "email": "demo@ridgeline.app",
+        "phone": "+91 98765 00000"
+      },
+      "razorpayOrderId": "order_1792923157741_m85stl",
+      "paymentMethod": "razorpay",
+      "transactionId": "pay_test_1792923157745",
+      "paidAt": "2026-10-25T10:12:37.756Z"
+    }
+  ],
+  "payment_transactions": [
+    {
+      "id": "txn-1",
+      "orderId": "ORD-2026-001",
+      "userId": "u1",
+      "amount": 0,
+      "currency": "INR",
+      "provider": "system",
+      "razorpayOrderId": null,
+      "razorpayPaymentId": "TXN_FREE_001",
+      "razorpaySignature": null,
+      "status": "success",
+      "verified": true,
+      "createdAt": "2026-02-01T10:00:00.000Z"
+    },
+    {
+      "id": "TXN-1792923157765",
+      "createdAt": "2026-10-25T10:12:37.765Z",
+      "orderId": "ORD-2026-0002",
+      "userId": "u1",
+      "amount": 1349,
+      "currency": "INR",
+      "provider": "razorpay",
+      "razorpayOrderId": "order_1792923157741_m85stl",
+      "razorpayPaymentId": "pay_test_1792923157745",
+      "razorpaySignature": "14a77f48984d3969517d0a7aa77410dc1dd8c8b04a017715622576b6db4b5f15",
+      "status": "success",
+      "verified": true
+    },
+    {
+      "id": "TXN-1792923157822",
+      "createdAt": "2026-10-25T10:12:37.822Z",
+      "orderId": "ORD-2026-0002",
+      "userId": "u1",
+      "amount": 1349,
+      "currency": "INR",
+      "provider": "razorpay",
+      "razorpayOrderId": "order_1792923157741_m85stl",
+      "razorpayPaymentId": "pay_test_1792923157745",
+      "razorpaySignature": "tampered_fake_signature",
+      "status": "failed",
+      "verified": false
+    }
+  ],
+  "progress": {
+    "u1": {
+      "c1": {
+        "l1": {
+          "watched": 480,
+          "complete": true
+        },
+        "l2": {
+          "watched": 600,
+          "complete": true,
+          "updatedAt": "2026-10-25T10:12:37.846Z"
+        }
+      }
+    }
+  }
+}
