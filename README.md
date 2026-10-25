@@ -1,17 +1,18 @@
 # Ridgeline LMS — Complete Connected Learning Management System
 
-A production-grade, beautifully integrated React + Vite + Node.js/Express Learning Management System (LMS) with full Razorpay checkout integration, persistent multi-user data storage, complete profile management with order history and certificates, and real-time state synchronization across all modules.
+A React + Vite + Node.js/Express Learning Management System (LMS) with course management, profile management, shopping cart, checkout, payment integration, and dashboards for students, instructors, and administrators.
 
 ---
 
 ## 1. Quick Start
 
 ### Prerequisites
-- Node.js 18+ (tested on Node v24.20.0)
-- npm (tested on npm 11.19.0)
+- Node.js 18+
+- npm
 
 ### Installation
-In the project directory (`lms-project`):
+
+In the project directory (`lms-project`), run:
 
 ```bash
 npm install
@@ -19,98 +20,165 @@ npm install
 
 ### Running the Project
 
-You can run both the Express backend and the Vite frontend:
+Run the backend and frontend in separate terminals.
 
-#### Option A: Run Backend & Frontend in separate terminals
-**Terminal 1 (Backend Server on http://localhost:5000):**
+**Terminal 1 — Backend server**
+
 ```bash
 npm run server
 ```
 
-**Terminal 2 (Frontend Client on http://localhost:5173):**
+**Terminal 2 — Frontend client**
+
 ```bash
 npm run dev
 ```
 
-#### Option B: Offline / Standalone Client
-If the backend server is not running, the frontend automatically falls back to its built-in local persistent store, so all features (profile, cart, payments, checkout, enrollments, certificates) continue to function seamlessly!
-
-### Automated Integration Test Suite
-To execute the end-to-end integration test suite verifying authentication, cart operations, server-side pricing, Razorpay HMAC-SHA256 signature verification, course enrollment, and admin approvals:
-
-```bash
-node -e "import('./server/index.js').then(() => { setTimeout(() => { import('./test-integration.js').then(() => process.exit(0)); }, 1200); });"
-```
+The frontend typically runs at `http://localhost:5173`, and the backend runs at `http://localhost:5000`.
 
 ### Production Build
+
 ```bash
 npm run build
 npm run preview
 ```
 
----
-
-## 2. Key Features Implemented
-
-### 2.1 Complete Profile Experience (Guided by Reference Image)
-- **Profile Overview**: Displays full name, high-resolution avatar with an in-place selector, Student/User ID (`RL-2026-001`), role badge, last login timestamp, and device metadata (`Windows · New Delhi, India`).
-- **Profile Editing**: Edit name, phone number, bio, and avatar with real-time validation. Role escalation is blocked server-side.
-- **SMS & Email Alerts**: Interactive switches for SMS alerts and email digest activation directly matching the reference layout.
-- **"My bills & orders"**: Clean transaction ledger matching the reference image's "My bills" card:
-  - Filter by All, Paid, or Free.
-  - Emerald green status dot and `Bill paid` badge.
-  - Printable invoice/receipt view modal with itemized pricing, customer info, and transaction reference.
-- **Learning Tabs**:
-  - Enrolled courses with visual completion progress.
-  - Verified Certificates of Completion for courses with 100% progress, complete with certificate modal view.
-- **Authenticated Password Change**: Change password modal with current password verification and length validation.
-
-### 2.2 Shopping Cart & Checkout
-- **Persistent Cart**: Isolated per user and synced with the backend and local storage across page refreshes.
-- **Validation**:
-  - Prevents adding courses already enrolled.
-  - Prevents duplicate items.
-  - Rejects unapproved/pending courses.
-- **Itemized Pricing**: Course thumbnails, category, instructor, item removal, and subtotal calculation.
-- **Checkout Workflow**:
-  - Itemized order review.
-  - Billing details form (Name, Email, Phone, State).
-  - Discount coupons (`RIDGELINE10` for 10% off, `WELCOME20` for 20% off).
-  - Taxes/GST clearly shown.
-
-### 2.3 Official Razorpay Gateway & Verification
-- **Server-Side Price Calculation**: Prices are looked up strictly from trusted database courses; client-submitted prices are never trusted.
-- **Razorpay Order Creation**: `/api/payments/razorpay/create-order` creates orders on the server.
-- **Signature Verification**: Verifies payment integrity using HMAC-SHA256 with the secret key (`crypto.createHmac('sha256', secret)`).
-- **Test Gateway Mode**: Built-in interactive Razorpay modal allows demonstration of successful payment, bank failure, and user cancellation with full backend signature verification without requiring live bank credentials.
-- **Post-Payment Transition**: Automatically marks order as paid, enrolls student, cleanses purchased items from the active cart, updates student counts, and redirects to Order Confirmation.
-
-### 2.4 Global State Synchronization
-- **Instant Updates**: Editing a profile immediately updates the sidebar card, header initials, account popover, and admin user table.
-- **Course Catalog**: Only approved courses appear in the catalog. Instructor-created courses default to "pending" and appear only after admin approval.
-- **Multi-User Isolation**: Signing out and logging in as another user switches cart, enrollments, orders, and progress cleanly without data leakage.
-
----
-
-## 3. Environment Variables (Optional)
-
-To configure live Razorpay credentials instead of test mode:
+### Integration Tests
 
 ```bash
-# In your terminal or .env file:
+node -e "import('./server/index.js').then(() => { setTimeout(() => { import('./test-integration.js').then(() => process.exit(0)); }, 1200); });"
+```
+
+Run the integration tests only after checking that the backend and test script are configured as expected.
+
+---
+
+## 2. Key Features
+
+### 2.1 User Profiles
+- Profile overview and avatar selection.
+- Profile editing with validation.
+- User roles and account information.
+- Order history and transaction records.
+- Enrolled courses and learning progress.
+- Certificates for completed courses.
+- Password change functionality.
+
+### 2.2 Course Catalog and Management
+- Browse and explore available courses.
+- Course details and instructor information.
+- Student, instructor, and administrator dashboards.
+- Course creation and approval workflows.
+- Enrollment and progress tracking.
+
+### 2.3 Shopping Cart and Checkout
+- Persistent shopping cart.
+- Duplicate and enrollment validation.
+- Itemized order review.
+- Billing details and subtotal calculation.
+- Discount coupon support.
+- Taxes and GST display.
+
+### 2.4 Payment Integration
+- Razorpay order creation through the backend.
+- Server-side course price validation.
+- Payment signature verification using HMAC-SHA256.
+- Test payment flow for demonstration.
+- Order confirmation and enrollment updates.
+
+**Important:** Live payments require correctly configured Razorpay credentials and server-side environment variables. Never commit real credentials or secrets to GitHub.
+
+### 2.5 State Synchronization
+- Profile updates reflected across relevant UI components.
+- Cart, orders, enrollments, and progress managed per user.
+- Course approval status reflected in the catalog.
+- Backend and local-storage persistence, depending on the configured application flow.
+
+---
+
+## 3. Environment Variables
+
+For live Razorpay integration, configure the required environment variables in a local `.env` file:
+
+```env
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 PORT=5000
 ```
 
+Use placeholder values in documentation. Do not publish real API keys, secrets, passwords, or private credentials.
+
 ---
 
 ## 4. Test Accounts
 
-| Name | Email | Password | Role |
-| --- | --- | --- | --- |
-| Rhea Kapoor | `demo@ridgeline.app` | `password123` | Student |
-| Dev Malhotra | `dev@ridgeline.app` | `password123` | Student |
-| Ananya Rao | `ananya@ridgeline.app` | `password123` | Instructor |
-| Vikram Shah | `vikram@ridgeline.app` | `password123` | Instructor |
-| Admin User | `admin@ridgeline.app` | `password123` | Admin |
+Use only the demo accounts configured in the application or its seed data. Check the project's database and authentication code for the current test usernames, passwords, and roles before using them.
+
+---
+
+## 5. Project Structure
+
+```text
+lms-project/
+├── server/
+│   ├── data/
+│   ├── db.js
+│   └── index.js
+├── src/
+│   ├── components/
+│   ├── context/
+│   ├── App.jsx
+│   ├── api.js
+│   ├── data.js
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── test-integration.js
+└── vite.config.js
+```
+
+---
+
+## 6. Technologies Used
+
+- React
+- Vite
+- JavaScript
+- Node.js
+- Express
+- Razorpay integration
+- CSS
+- Git and GitHub
+
+---
+
+## 7. Development Workflow
+
+This project is maintained collaboratively using Git and GitHub.
+
+1. Pull the latest changes before starting work.
+2. Implement and test your changes locally.
+3. Commit your changes with a descriptive message.
+4. Pull the latest shared changes before pushing.
+5. Push your changes to the shared repository.
+
+---
+
+## 8. Production Build
+
+To verify the frontend build:
+
+```bash
+npm run build
+```
+
+Resolve any build errors before deploying the application.
+
+---
+
+## About
+
+Ridgeline LMS is an online learning platform designed to help students discover courses, enroll, track progress, and manage their learning experience. It also provides course management and dedicated workflows for instructors and administrators.
